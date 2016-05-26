@@ -4,6 +4,9 @@ import {Dragula, DragulaService} from 'ng2-dragula/ng2-dragula';
 
 const RES_PATH = 'app/resources/';
 const DEBUG : boolean = true;
+const BUTTON_DEFAULT = 'Überprüfe deine Sortierung';
+const BUTTON_SUCCESS = 'Richtig!';
+const BUTTON_FAILURE = 'Das ist nicht ganz richtig';
 
 @Component({
     selector: 'my-app',
@@ -56,11 +59,13 @@ export class AppComponent {
     public libra_tilded_left:string = RES_PATH + 'libraleft.png';
     public libra_tilded_right:string = RES_PATH + 'libraright.png';
 
+
+    // Bounded values
+    public libraResult:string = this.libra_equal;
+    public checkButton:string = BUTTON_DEFAULT;
     public boxes:ComparableObject[];
     public scaleLeft:ComparableObject = null;
     public scaleRight:ComparableObject = null;
-
-    public libraResult:string = this.libra_equal;
 
     private scalePointer:boolean = true;
 
@@ -88,6 +93,7 @@ export class AppComponent {
     }
 
     onOver(args) {
+        this.checkButton = BUTTON_DEFAULT;
         // el is over container and came from source
         let [el, container, source] = args;
         console.log(el.id + ':' + container.id + ':' + source.id);
@@ -158,7 +164,24 @@ export class AppComponent {
     }
 
     checkOrder(){
+        if (this.isOrdered(this.boxes)) {
+            this.checkButton = BUTTON_SUCCESS;
+        } else {
+            this.checkButton = BUTTON_FAILURE;
+        }
 
+    }
+
+    isOrdered(entries:ComparableObject[]):boolean {
+        let property:number = 0;
+        for (let i:number = 0; i < this.boxes.length; i++) {
+            let box_entry = this.boxes[i];
+            if (box_entry.property < property) {
+                return false;
+            }
+            property = box_entry.property;
+        }
+        return true;
     }
 
     static makeSomeBoxes(n:number):ComparableObject[] {

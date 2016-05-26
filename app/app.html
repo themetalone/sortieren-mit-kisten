@@ -3,7 +3,8 @@
 <div>
     <div class='wrapper'>
         <div class='container' id='bb' [dragula]='"box-bag"' [dragulaModel]='boxes'>
-            <div (click)='boxClick($event)' *ngFor='let box of boxes' id='{{box.id}}'><span class='handle'>+</span>Box
+            <div (click)='boxClick($event)' *ngFor='let box of boxes' id='{{box.id}}'><span
+                    class='handle'>{{box.id}}</span>Box
                 {{box.id}}
             </div>
         </div>
@@ -16,8 +17,11 @@
         <div><img src={{libraResult}} width='50'/></div>
         <div class='container' id='src'>
             <div *ngIf='scaleRight!=null' id='{{scaleRight.id}}'>Box {{scaleRight.id}}</div>
-        </div><br/>
-        <button (click)="resetScale()">Waage zurücksetzen</button><button (click)='checkOrder()'>Überprüfen</button>
+        </div>
+        <div>
+            <button (click)="resetScale()">Waage zurücksetzen</button>
+            <button (click)='checkOrder()'>{{checkButton}}</button>
+        </div>
     </div>
 
     <div *ngIf='DEBUG'>
