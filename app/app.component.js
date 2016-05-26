@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -12,6 +11,9 @@ var core_1 = require('@angular/core');
 var ng2_dragula_1 = require('ng2-dragula/ng2-dragula');
 var RES_PATH = 'app/resources/';
 var DEBUG = true;
+var BUTTON_DEFAULT = 'Überprüfe deine Sortierung';
+var BUTTON_SUCCESS = 'Richtig!';
+var BUTTON_FAILURE = 'Das ist nicht ganz richtig';
 var AppComponent = (function () {
     function AppComponent(dragulaService) {
         var _this = this;
@@ -21,9 +23,11 @@ var AppComponent = (function () {
         this.libra_equal = RES_PATH + 'libra.png';
         this.libra_tilded_left = RES_PATH + 'libraleft.png';
         this.libra_tilded_right = RES_PATH + 'libraright.png';
+        // Bounded values
+        this.libraResult = this.libra_equal;
+        this.checkButton = BUTTON_DEFAULT;
         this.scaleLeft = null;
         this.scaleRight = null;
-        this.libraResult = this.libra_equal;
         this.scalePointer = true;
         this.boxes = AppComponent.makeSomeBoxes(5);
         this.dragulaService.setOptions('box-bag', {
@@ -45,6 +49,7 @@ var AppComponent = (function () {
         return el.className == '';
     };
     AppComponent.prototype.onOver = function (args) {
+        this.checkButton = BUTTON_DEFAULT;
         // el is over container and came from source
         var el = args[0], container = args[1], source = args[2];
         console.log(el.id + ':' + container.id + ':' + source.id);
@@ -107,6 +112,23 @@ var AppComponent = (function () {
         return o;
     };
     AppComponent.prototype.checkOrder = function () {
+        if (this.isOrdered(this.boxes)) {
+            this.checkButton = BUTTON_SUCCESS;
+        }
+        else {
+            this.checkButton = BUTTON_FAILURE;
+        }
+    };
+    AppComponent.prototype.isOrdered = function (entries) {
+        var property = 0;
+        for (var i = 0; i < entries.length; i++) {
+            var box_entry = entries[i];
+            if (box_entry.property < property) {
+                return false;
+            }
+            property = box_entry.property;
+        }
+        return true;
     };
     AppComponent.makeSomeBoxes = function (n) {
         var result = [];
@@ -122,11 +144,11 @@ var AppComponent = (function () {
             templateUrl: './app/app.html',
             directives: [ng2_dragula_1.Dragula],
             viewProviders: [ng2_dragula_1.DragulaService],
-            styles: ["\n    .wrapper {\n      display: table;\n    }\n    .container {\n      display: table-cell;\n      background-color: rgba(255, 255, 255, 0.2);\n      width: 50%;\n    }\n    .container:nth-child(odd) {\n      background-color: rgba(0, 0, 0, 0.2);\n    }\n    .container div,\n    .gu-mirror {\n      margin: 10px;\n      padding: 10px;\n      background-color: rgba(0, 0, 0, 0.2);\n      transition: opacity 0.4s ease-in-out;\n    }\n    .container div {\n      cursor: move;\n      cursor: grab;\n      cursor: -moz-grab;\n      cursor: -webkit-grab;\n    }\n    .gu-mirror {\n      cursor: grabbing;\n      cursor: -moz-grabbing;\n      cursor: -webkit-grabbing;\n    }\n    .handle {\n      padding: 0 5px;\n      margin-right: 5px;\n      background-color: rgba(0, 0, 0, 0.4);\n      cursor: move;\n    }\n   "]
+            styles: ["\n    .wrapper {\n      display: table;\n      margin: auto;\n      width:100%;\n    }\n    .container {\n      display: table-cell;\n      background-color: rgba(255, 255, 255, 0.2);\n      width: 50%;\n      text-align: center;\n    }\n    .container:nth-child(odd) {\n      background-color: rgba(0, 0, 0, 0.2);\n    }\n    .container div,\n    .gu-mirror {\n      margin: 10px;\n      padding: 10px;\n      background-color: rgba(0, 0, 0, 0.2);\n      transition: opacity 0.4s ease-in-out;\n    }\n    .container div {\n      cursor: move;\n      cursor: grab;\n      cursor: -moz-grab;\n      cursor: -webkit-grab;\n    }\n    .gu-mirror {\n      cursor: grabbing;\n      cursor: -moz-grabbing;\n      cursor: -webkit-grabbing;\n    }\n    .handle {\n      padding: 0 5px;\n      margin-right: 5px;\n      background-color: rgba(0, 0, 0, 0.4);\n      cursor: move;\n    }\n    .halfsitebutton {\n      width:50%;\n    }\n    .fullsitebutton {\n        width:100%;\n    }\n   "]
         }), 
         __metadata('design:paramtypes', [ng2_dragula_1.DragulaService])
     ], AppComponent);
     return AppComponent;
-}());
+})();
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
