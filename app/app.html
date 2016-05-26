@@ -3,25 +3,24 @@
 <div>
     <div class='wrapper'>
         <div class='container' id='bb' [dragula]='"box-bag"' [dragulaModel]='boxes'>
-            <div (click)='boxClick($event)' *ngFor='let box of boxes' id='{{box.id}}'><span
-                    class='handle'>{{box.id}}</span>Box
-                {{box.id}}
+            <div (click)='boxClick($event)' *ngFor='let box of boxes' id='{{box.id}}'>
+                <span class='handle'>{{box.id}}</span>
             </div>
         </div>
     </div>
     <br/>
     <div class='wrapper'>
         <div class='container' id='slc'>
-            <div *ngIf='scaleLeft!=null' id='{{scaleLeft.id}}'>Box {{scaleLeft.id}}</div>
+            <div *ngIf='scaleLeft!=null' id='{{scaleLeft.id}}'><span class='handle'>{{scaleLeft.id}}</span></div>
         </div>
         <div><img src={{libraResult}} width='50'/></div>
         <div class='container' id='src'>
-            <div *ngIf='scaleRight!=null' id='{{scaleRight.id}}'>Box {{scaleRight.id}}</div>
+            <div *ngIf='scaleRight!=null' id='{{scaleRight.id}}'><span class='handle'>{{scaleRight.id}}</span></div>
         </div>
-        <div>
-            <button (click)="resetScale()">Waage zurücksetzen</button>
-            <button (click)='checkOrder()'>{{checkButton}}</button>
-        </div>
+    </div>
+    <div class='wrapper'>
+        <button class='halfsitebutton' (click)="resetScale()">Waage zurücksetzen</button>
+        <button class='halfsitebutton' (click)='checkOrder()'>{{checkButton}}</button>
     </div>
 
     <div *ngIf='DEBUG'>

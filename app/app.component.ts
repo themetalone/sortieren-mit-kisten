@@ -3,24 +3,27 @@ import {ComparableObject} from "./model/ComparableObject";
 import {Dragula, DragulaService} from 'ng2-dragula/ng2-dragula';
 
 const RES_PATH = 'app/resources/';
-const DEBUG : boolean = true;
+const DEBUG:boolean = true;
 const BUTTON_DEFAULT = 'Überprüfe deine Sortierung';
 const BUTTON_SUCCESS = 'Richtig!';
 const BUTTON_FAILURE = 'Das ist nicht ganz richtig';
 
 @Component({
     selector: 'my-app',
-    templateUrl:'./app/app.html',
+    templateUrl: './app/app.html',
     directives: [Dragula],
     viewProviders: [DragulaService],
     styles: [`
     .wrapper {
       display: table;
+      margin: auto;
+      width:100%;
     }
     .container {
       display: table-cell;
       background-color: rgba(255, 255, 255, 0.2);
       width: 50%;
+      text-align: center;
     }
     .container:nth-child(odd) {
       background-color: rgba(0, 0, 0, 0.2);
@@ -49,6 +52,12 @@ const BUTTON_FAILURE = 'Das ist nicht ganz richtig';
       background-color: rgba(0, 0, 0, 0.4);
       cursor: move;
     }
+    .halfsitebutton {
+      width:50%;
+    }
+    .fullsitebutton {
+        width:100%;
+    }
    `]
 })
 export class AppComponent {
@@ -72,7 +81,7 @@ export class AppComponent {
     constructor(private dragulaService:DragulaService) {
         this.boxes = AppComponent.makeSomeBoxes(5);
         this.dragulaService.setOptions('box-bag', {
-            revertOnSpill:true,
+            revertOnSpill: true,
             moves: function (el, container, handle) {
                 return handle.className === 'handle';
             }
@@ -163,7 +172,7 @@ export class AppComponent {
         return o;
     }
 
-    checkOrder(){
+    checkOrder() {
         if (this.isOrdered(this.boxes)) {
             this.checkButton = BUTTON_SUCCESS;
         } else {
@@ -174,8 +183,8 @@ export class AppComponent {
 
     isOrdered(entries:ComparableObject[]):boolean {
         let property:number = 0;
-        for (let i:number = 0; i < this.boxes.length; i++) {
-            let box_entry = this.boxes[i];
+        for (let i:number = 0; i < entries.length; i++) {
+            let box_entry = entries[i];
             if (box_entry.property < property) {
                 return false;
             }
