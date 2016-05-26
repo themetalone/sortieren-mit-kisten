@@ -7,7 +7,7 @@ This repository is used to develop a webpage to introduce students to the basic 
 == Allgemeine Informationen
 
 * Diese Website wird im Rahmen des fachdidaktische Seminar des Studiengangs *Master of Education LAG Informatik* der https://www.uni-kl.de[Technischen Universität Kaiserslautern] entwickelt.
-* Eine aktuelle Version der Website befindet sich hier: http://themetalone.github.io/sortieren-mit-kisten/[Version 1605242105].
+* Eine aktuelle Version der Website befindet sich hier: http://themetalone.github.io/sortieren-mit-kisten/[Version 1605261905].
 . Die Website wird aktuell als https://help.github.com/categories/github-pages-basics/[GitHub Page] hier auf GitHub gehostet. Damit sind gewisse Beschränkungen bezüglich der Zugriffe verbunden. Ich bitte darum, diesen Link nur zu Vorschauzwecken und nicht im Unterricht zu verwenden.
 . Der entsprechende Zweig ist 'gh-page' und enthält alle benötigten Daten zur Ausführung der Website (Auch die `node_modules`)
 
