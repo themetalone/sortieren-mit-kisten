@@ -13,52 +13,7 @@ const BUTTON_FAILURE = 'Das ist nicht ganz richtig';
     templateUrl: './app/app.html',
     directives: [Dragula],
     viewProviders: [DragulaService],
-    styles: [`
-    .wrapper {
-      display: table;
-      margin: auto;
-      width:100%;
-    }
-    .container {
-      display: table-cell;
-      background-color: rgba(255, 255, 255, 0.2);
-      width: 50%;
-      text-align: center;
-    }
-    .container:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.2);
-    }
-    .container div,
-    .gu-mirror {
-      margin: 10px;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.2);
-      transition: opacity 0.4s ease-in-out;
-    }
-    .container div {
-      cursor: move;
-      cursor: grab;
-      cursor: -moz-grab;
-      cursor: -webkit-grab;
-    }
-    .gu-mirror {
-      cursor: grabbing;
-      cursor: -moz-grabbing;
-      cursor: -webkit-grabbing;
-    }
-    .handle {
-      padding: 0 5px;
-      margin-right: 5px;
-      background-color: rgba(0, 0, 0, 0.4);
-      cursor: move;
-    }
-    .halfsitebutton {
-      width:50%;
-    }
-    .fullsitebutton {
-        width:100%;
-    }
-   `]
+    styleUrls: ['./app/app.css']
 })
 export class AppComponent {
 
@@ -79,12 +34,9 @@ export class AppComponent {
     private scalePointer:boolean = true;
 
     constructor(private dragulaService:DragulaService) {
-        this.boxes = AppComponent.makeSomeBoxes(5);
+        this.defaultButtonClick();
         this.dragulaService.setOptions('box-bag', {
-            revertOnSpill: true,
-            moves: function (el, container, handle) {
-                return handle.className === 'handle';
-            }
+            revertOnSpill: true
         });
         this.dragulaService.setOptions('scale-bag', {});
 
@@ -191,6 +143,40 @@ export class AppComponent {
             property = box_entry.property;
         }
         return true;
+    }
+
+    defaultButtonClick() {
+        this.boxes = [
+            {id: 0, property: 10},
+            {id: 1, property: 9},
+            {id: 2, property: 11},
+            {id: 3, property: 8},
+            {id: 4, property: 7}
+        ];
+    }
+
+    newProblemButtonClick() {
+        let select = <HTMLSelectElement> document.getElementById('problem_size');
+        let selected_case = Number((<HTMLOptionElement>select.item(select.selectedIndex)).value);
+        switch (selected_case) {
+            default:
+            case 1:
+                this.boxes = AppComponent.makeSomeBoxes(5);
+                break;
+            case 2:
+                this.boxes = AppComponent.makeSomeBoxes(8);
+                break;
+            case 3:
+                this.boxes = [
+                    {id: 0, property: 11},
+                    {id: 1, property: 10},
+                    {id: 2, property: 9},
+                    {id: 3, property: 8},
+                    {id: 4, property: 7}
+                ];
+                break;
+        }
+
     }
 
     static makeSomeBoxes(n:number):ComparableObject[] {
