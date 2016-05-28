@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,12 +30,9 @@ var AppComponent = (function () {
         this.scaleLeft = null;
         this.scaleRight = null;
         this.scalePointer = true;
-        this.boxes = AppComponent.makeSomeBoxes(5);
+        this.defaultButtonClick();
         this.dragulaService.setOptions('box-bag', {
-            revertOnSpill: true,
-            moves: function (el, container, handle) {
-                return handle.className === 'handle';
-            }
+            revertOnSpill: true
         });
         this.dragulaService.setOptions('scale-bag', {});
         this.dragulaService.drop.subscribe(function (value) {
@@ -130,6 +128,37 @@ var AppComponent = (function () {
         }
         return true;
     };
+    AppComponent.prototype.defaultButtonClick = function () {
+        this.boxes = [
+            { id: 0, property: 10 },
+            { id: 1, property: 9 },
+            { id: 2, property: 11 },
+            { id: 3, property: 8 },
+            { id: 4, property: 7 }
+        ];
+    };
+    AppComponent.prototype.newProblemButtonClick = function () {
+        var select = document.getElementById('problem_size');
+        var selected_case = Number(select.item(select.selectedIndex).value);
+        switch (selected_case) {
+            default:
+            case 1:
+                this.boxes = AppComponent.makeSomeBoxes(5);
+                break;
+            case 2:
+                this.boxes = AppComponent.makeSomeBoxes(8);
+                break;
+            case 3:
+                this.boxes = [
+                    { id: 0, property: 11 },
+                    { id: 1, property: 10 },
+                    { id: 2, property: 9 },
+                    { id: 3, property: 8 },
+                    { id: 4, property: 7 }
+                ];
+                break;
+        }
+    };
     AppComponent.makeSomeBoxes = function (n) {
         var result = [];
         for (var i = 0; i < n; i++) {
@@ -144,11 +173,11 @@ var AppComponent = (function () {
             templateUrl: './app/app.html',
             directives: [ng2_dragula_1.Dragula],
             viewProviders: [ng2_dragula_1.DragulaService],
-            styles: ["\n    .wrapper {\n      display: table;\n      margin: auto;\n      width:100%;\n    }\n    .container {\n      display: table-cell;\n      background-color: rgba(255, 255, 255, 0.2);\n      width: 50%;\n      text-align: center;\n    }\n    .container:nth-child(odd) {\n      background-color: rgba(0, 0, 0, 0.2);\n    }\n    .container div,\n    .gu-mirror {\n      margin: 10px;\n      padding: 10px;\n      background-color: rgba(0, 0, 0, 0.2);\n      transition: opacity 0.4s ease-in-out;\n    }\n    .container div {\n      cursor: move;\n      cursor: grab;\n      cursor: -moz-grab;\n      cursor: -webkit-grab;\n    }\n    .gu-mirror {\n      cursor: grabbing;\n      cursor: -moz-grabbing;\n      cursor: -webkit-grabbing;\n    }\n    .handle {\n      padding: 0 5px;\n      margin-right: 5px;\n      background-color: rgba(0, 0, 0, 0.4);\n      cursor: move;\n    }\n    .halfsitebutton {\n      width:50%;\n    }\n    .fullsitebutton {\n        width:100%;\n    }\n   "]
+            styleUrls: ['./app/app.css']
         }), 
         __metadata('design:paramtypes', [ng2_dragula_1.DragulaService])
     ], AppComponent);
     return AppComponent;
-})();
+}());
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
