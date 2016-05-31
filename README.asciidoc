@@ -1,5 +1,11 @@
 = Sortieren mit Kisten
 
+== Build Information
+
+image:https://travis-ci.org/themetalone/sortieren-mit-kisten.svg?branch=master["Build Status", link="https://travis-ci.org/themetalone/sortieren-mit-kisten"]
+
+* A Snapshot of the website can be found here: http://themetalone.github.io/sortieren-mit-kisten/[Version 1605281626]
+
 == Information for english readers
 
 This repository is used to develop a webpage to introduce students to the basic modelling process of algorithms. This webpage will be used at german schools so the main part of the communication here will be in german. Although most of the source code will be developed in english the textual contents will also be in german. A localization for the english language is not planned but I won't say no if you provide a pull request.
@@ -7,8 +13,7 @@ This repository is used to develop a webpage to introduce students to the basic 
 == Allgemeine Informationen
 
 * Diese Website wird im Rahmen des fachdidaktische Seminar des Studiengangs *Master of Education LAG Informatik* der https://www.uni-kl.de[Technischen Universität Kaiserslautern] entwickelt.
-* Eine aktuelle Version der Website befindet sich hier: http://themetalone.github.io/sortieren-mit-kisten/[Version 1605261905].
-. Die Website wird aktuell als https://help.github.com/categories/github-pages-basics/[GitHub Page] hier auf GitHub gehostet. Damit sind gewisse Beschränkungen bezüglich der Zugriffe verbunden. Ich bitte darum, diesen Link nur zu Vorschauzwecken und nicht im Unterricht zu verwenden.
+* Die Website wird aktuell als https://help.github.com/categories/github-pages-basics/[GitHub Page] hier auf GitHub gehostet. Damit sind gewisse Beschränkungen bezüglich der Zugriffe verbunden. Ich bitte darum, diesen Link nur zu Vorschauzwecken und nicht im Unterricht zu verwenden.
 . Der entsprechende Zweig ist 'gh-page' und enthält alle benötigten Daten zur Ausführung der Website (Auch die `node_modules`)
 
 == Zweck

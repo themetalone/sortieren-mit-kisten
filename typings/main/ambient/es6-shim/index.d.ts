@@ -309,10 +309,10 @@ interface NumberConstructor {
 
 interface ObjectConstructor {
     /**
-      * Copy the values of all of the enumerable own properties from one or more source boxes to a
+      * Copy the values of all of the enumerable own properties from one or more source objects to a
       * target object. Returns the target object.
       * @param target The target object to copy to.
-      * @param sources One or more source boxes to copy properties from.
+      * @param sources One or more source objects to copy properties from.
       */
     assign(target: any, ...sources: any[]): any;
 
