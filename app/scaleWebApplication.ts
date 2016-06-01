@@ -9,16 +9,15 @@ const BUTTON_SUCCESS = 'Richtig!';
 const BUTTON_FAILURE = 'Das ist nicht ganz richtig';
 
 @Component({
-    selector: 'my-app',
-    templateUrl: './app/app.html',
+    selector: 'web-scale',
+    templateUrl: './app/scaleWebApplication.html',
     directives: [Dragula],
     viewProviders: [DragulaService],
-    styleUrls: ['./app/app.css']
+    styleUrls: ['./app/scaleWebApplication.css']
 })
-export class AppComponent {
+export class ScaleWebApplication {
 
     // Pictures
-    public box_picture:string = RES_PATH + 'box.png';
     public libra_equal:string = RES_PATH + 'libra.png';
     public libra_tilded_left:string = RES_PATH + 'libraleft.png';
     public libra_tilded_right:string = RES_PATH + 'libraright.png';
@@ -161,10 +160,10 @@ export class AppComponent {
         switch (selected_case) {
             default:
             case 1:
-                this.boxes = AppComponent.makeSomeBoxes(5);
+                this.boxes = ScaleWebApplication.makeSomeBoxes(5);
                 break;
             case 2:
-                this.boxes = AppComponent.makeSomeBoxes(8);
+                this.boxes = ScaleWebApplication.makeSomeBoxes(8);
                 break;
             case 3:
                 this.boxes = [
