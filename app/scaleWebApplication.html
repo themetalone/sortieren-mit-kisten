@@ -1,0 +1,53 @@
+<h2>Sortiere die Kisten</h2>
+<p>Ziehe die Einträge in der Liste um sie zu sortieren. Klicke auf einen Eintrag um ihn in die Waage zu legen. Sortiere
+    so, dass das leichteste Element oben steht.</p>
+<div>
+    <div>
+        <button id='default_problem' (click)='defaultButtonClick()'>Standard-Aufgabe</button>
+        <button id='new_problem' (click)='newProblemButtonClick()'>Neues Problem</button>
+        <select id='problem_size'>
+            <option value='1' selected>Einfach</option>
+            <option value='2'>Schwer</option>
+            <option value='3'>Worst Case</option>
+        </select>
+    </div>
+    <div class='wrapper'>
+        <div class='container' id='bb' [dragula]='"box-bag"' [dragulaModel]='boxes'>
+            <div (click)='boxClick($event)' *ngFor='let box of boxes' id='{{box.id}}'>{{box.id}}</div>
+        </div>
+    </div>
+    <br/>
+    <div class='wrapper'>
+        <div class='container' id='slc'>
+            <div *ngIf='scaleLeft!=null' id='{{scaleLeft.id}}'>{{scaleLeft.id}}</div>
+        </div>
+        <div><img src={{libraResult}} width='50'/></div>
+        <div class='container' id='src'>
+            <div *ngIf='scaleRight!=null' id='{{scaleRight.id}}'>{{scaleRight.id}}</div>
+        </div>
+    </div>
+    <div class='wrapper'>
+        <button class='halfsitebutton' (click)="resetScale()">Waage zurücksetzen</button>
+        <button class='halfsitebutton' (click)='checkOrder()'>{{checkButton}}</button>
+    </div>
+
+    <div *ngIf='DEBUG'>
+        <p>debug:</p>
+        <table>
+            <tr>
+                <th>Boxes</th>
+                <th>ScaleLeft</th>
+                <th>ScaleRight</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li *ngFor='let box of boxes'>{{box.id}}:{{box.property}}</li>
+                    </ul>
+                </td>
+                <td *ngIf='scaleLeft!=null'>{{scaleLeft.id}}:{{scaleLeft.property}}</td>
+                <td *ngIf='scaleRight!=null'>{{scaleRight.id}}:{{scaleRight.property}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

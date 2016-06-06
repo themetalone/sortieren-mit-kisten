@@ -1,5 +1,5 @@
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 
-import { AppComponent } from './app.component';
+import { ScaleWebApplication } from './scaleWebApplication';
 
-bootstrap(AppComponent);
+bootstrap(ScaleWebApplication);
