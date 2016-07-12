@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<csv-table [csv]='Verband,LV,Uebergeordnet,Verbandname
+100,1,000,Badischer Schachverband
+101,1,100,Mannheim
+102,1,100,Heidelberg
+103,1,100,Odenwald
+104,1,100,Karlsruhe
+105,1,100,Pforzheim
+106,1,100,Mittelbaden
+107,1,100,Ortenau
+108,1,100,Freiburg
+109,1,100,Hochrhein
+10A,1,100,Schwarzwald
+10B,1,100,Bodensee
+200,2,000,Bayerischer Schachbund e.V.
+210,2,200,Mittelfranken
+211,2,210,Mittelfranken-Mitte
+212,2,210,Mittelfranken-Nord
+213,2,210,Mittelfranken-Ost
+214,2,210,Mittelfranken-Süd
+215,2,210,Mittelfranken-West
+220,2,200,München
+230,2,200,Niederbayern
+240,2,200,BV Oberbayern e.V.
+241,2,240,Schachkreis IN-FS
+242,2,240,Schachkreis Inn-Chiemgau
+244,2,240,Schachkreis Zugspitze
+250,2,200,BV Oberfranken
+251,2,250,Kreisverband Bamberg
+252,2,250,Kreisverband Bayreuth
+253,2,250,Kreisverband Hof
+254,2,250,Kreisverband Coburg/Neustadt
+255,2,250,Kreisverband Marktredwitz
+256,2,250,Kreisverband Lichtenfels/Kronach
+260,2,200,Schachverband Oberpfalz e.V.
+270,2,200,Schwaben
+271,2,270, Augsburg
+272,2,270,Mittelschwaben
+273,2,270,Nordschwaben
+274,2,270,Südschwaben
+280,2,200,Unterfranken e.V
+281,2,280,Spessart/Untermain
+282,2,280,Mainspessart
+283,2,280,Haßberge-Rhön
+284,2,280,Maindreieck
+300,3,000,Berliner Schachverband
+400,4,000,Hamburger Schachverband
+500,5,000,Hessischer Schachverband
+510,5,500,Kassel-Nordhessen
+520,5,500,Osthessen
+530,5,500,Lahn-Eder
+540,5,500,Main-Vogelsberg
+550,5,500,Frankfurt
+560,5,500,Starkenburg
+570,5,500,Main-Taunus
+580,5,500,Rhein-Taunus
+590,5,500,Lahn
+5A0,5,500,Bergstraße
+600,6,000,Schachbund Nordrhein-Westfalen e.V.
+610,6,600,SV Ruhrgebiet e.V.
+611,6,610,Schachbezirk Bochum
+612,6,610,Schachgemeinschaft Dortmund
+613,6,610,Schachbezirk Essen
+614,6,610,Schachbezirk Emscher-Lippe
+615,6,610,Schachbezirk Hamm
+616,6,610,Mülheim an der Ruhr 1922 e.V.
+617,6,610,Schachbezirk Herne - Vest
+620,6,600,Niederrheinischer Schachverband 1901 e.V.
+621,6,620,Schachbezirk Bergisch-Land
+622,6,620,Schachbezirk Düsseldorf
+623,6,620,Schachbezirk Duisburg
+624,6,620,Linker Niederrhein
+625,6,620,Schachbezirk Kreis Wesel e.V.
+630,6,600,Schachverband Südwestfalen
+632,6,630,Schachbezirk Iserlohn
+633,6,630,Schachbezirk Oberberg
+634,6,630,Schachbezirk Hochsauerland
+635,6,630,Schachbezirk Sauerland
+636,6,630,Schachbezirk Siegerland
+640,6,600,Schachverband Ostwestfalen-Lippe
+641,6,640,Schachbezirk Bielefeld
+642,6,640,Schachbezirk Hellweg
+643,6,640,Schachbezirk Lippe
+644,6,640,Schachbezirk Porta
+645,6,640,Schachbezirk Teutoburger Wald-West
+650,6,600,Schachverband Münsterland
+651,6,650,Schachbezirk Steinfurt
+652,6,650,Schachbezirk Borken
+653,6,650,Schachbezirk Münster
+660,6,600,Schachverband Mittelrhein e.V.
+661,6,660,Aachener Schachverband 1928 e.V.
+662,6,660,Bonn/Rhein-Sieg e.V.
+663,6,660,Kölner Schachverband von 1920 e.V.
+664,6,660,Schachbezirk Rur-Erft
+665,6,660,Schachbezirk Rhein-Wupper
+700,7,000,Niedersächsischer Schachverband e. V.
+701,7,700,Bezirk 1 Hannover
+702,7,700,Bezirk 2 Braunschweig
+703,7,700,Bezirk 3 Südniedersachsen
+704,7,700,Bezirk 4 Lüneburg
+705,7,700,Bezirk 5 Oldenburg-Ostfriesland
+706,7,700,Bezirk 6 Osnabrück-Emsland
+800,8,000,SB Rheinland-Pfalz e.V.
+810,8,800,Schachverband Rheinland e.V.
+811,8,810,Bezirk I Rhein-Ahr-Mosel
+812,8,810,Bezirk II Rhein-Nahe
+813,8,810,Bezirk III Rhein-Westerwald
+815,8,810,Bezirk IV Trier
+820,8,800,SB Rheinhessen e.V.
+830,8,800,Pfälzischer Schachbund e.V.
+831,8,830,Bezirk I Kaiserslautern
+832,8,830,Bezirk II Ludwigshafen
+833,8,830,Bezirk III Neustadt
+834,8,830,Bezirk IV Landau
+835,8,830,Bezirk V Pirmasens
+836,8,830,Bezirk VI Ramstein
+900,9,000,Saarländischer Schachverband
+A00,A,000,SVB Schleswig-Holstein
+A01,A,A00,Bezirk I Nord
+A02,A,A00,Bezirk II West
+A06,A,A00,Bezirk VI Kiel
+A08,A,A00,Bezirk Ost
+B00,B,000,Landesschachbund Bremen
+C00,C,000,Schachverband Württemberg e.V.
+C01,C,C00,Bezirk Oberschwaben
+C02,C,C00,Bezirk Alb/Schwarzwald
+C03,C,C00,Bezirk Neckar-Fils
+C04,C,C00,Bezirk Ostalb
+C05,C,C00,Bezirk Stuttgart
+C06,C,C00,Bezirk Unterland-Hohenlohe
+D00,D,000,Schachbund Brandenburg
+D10,D,D00,Cottbus
+D20,D,D00,Frankfurt/O.
+D30,D,D00,Potsdam
+E00,E,000,LSV Mecklenburg-Vorpommern
+E01,E,E00,Spielbezirk West
+E02,E,E00,Spielbezirk Mitte
+E03,E,E00,Spielbezirk Ost
+F00,F,000,Schachverband Sachsen e.V.
+F10,F,F00,Leipzig
+F11,F,F10,Landkreis Delitzsch
+F12,F,F10,Landkreis Döbeln
+F13,F,F10,Landkreis Torgau-Oschatz
+F15,F,F10,Stadt Leipzig
+F18,F,F10,Kreis Leipziger Land
+F19,F,F10,Muldentalkreis
+F20,F,F00,Dresden
+F21,F,F20,Landkreis Riesa-Großenhain
+F22,F,F20,Landkreis Sächsische Schweiz
+F23,F,F20,Landkreis Kamenz
+F24,F,F20,Stadt Hoyerswerda
+F25,F,F20,Weiseritzkreis
+F26,F,F20,Landkreis Meißen
+F27,F,F20,Stadt Görlitz
+F28,F,F20,Stadt Dresden
+F29,F,F20,Landkreis Löbau-Zittau
+F2A,F,F20,Landkreis Bautzen
+F2B,F,F20,Niederschlesischer Oberlausitzkreis
+F30,F,F00,Chemnitz
+F31,F,F30,Landkreis Stollberg
+F32,F,F30,Landkreis Mittweida
+F33,F,F30,Landkreis Freiberg
+F34,F,F30,Landkreis Chemnitzer Land
+F35,F,F30,Landkreis Annaberg
+F36,F,F30,Stadt Chemnitz
+F37,F,F30,Vogtlandkreis
+F38,F,F30,Stadt Zwickau
+F39,F,F30,Mittlerer Erzgebirgskreis
+F3A,F,F30,Landkreis Zwicker Land
+F3B,F,F30,Stadt Plauen
+F3C,F,F30,Landkreis Aue-Schwarzenberg
+G00,G,000,LSV Sachsen-Anhalt
+G01,G,G00,Schachbezirk Dessau
+G02,G,G00,Schachbezirk Halle
+G03,G,G00,Schachbezirk Magdeburg
+H00,H,000,Thüringer Schachbund
+H10,H,H00,Schachbezirk Nord
+H11,H,H10,Schachkreis Kyffhäuser
+H12,H,H10,Schachkreis Eichsfeld
+H13,H,H10,Schachkreis Nordhausen
+H14,H,H10,Schachkreis Unstrut-Hainich
+H15,H,H10,Schachkreis Gotha
+H20,H,H00,Schachbezirk Mitte
+H21,H,H20,Schachkreis Erfurt
+H22,H,H20,Schachkreis Weimarer Land
+H23,H,H20,Schachkreis Sömmerda
+H24,H,H20,Schachkreis Ilm-Kreis
+H25,H,H20,Schachkreis Weimar
+H30,H,H00,Schachbezirk Ost
+H31,H,H30,Schachkreis Gera
+H32,H,H30,Schachkreis Jena/Holzlandkreis
+H33,H,H30,Schachkreis Greiz
+H34,H,H30,Schachkreis Altenburger Land
+H35,H,H30,Schachkreis Saalfeld-Rudolstadt/SOK
+H40,H,H00,Schachbezirk Süd
+H41,H,H40,Schachkreis Schmalkalden-Meiningen/Suhl
+H42,H,H40,Schachkreis Sonneberg/Hildburghausen
+H43,H,H40,Schachkreis Wartburgkreis/Eisenach
+L00,L,000,Deutscher Blinden- und Sehbehinderten-Schachbund
+M00,M,000,Schwalbe'>Loading....</csv-table>
+</body>
+</html>

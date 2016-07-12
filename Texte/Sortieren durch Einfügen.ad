@@ -1,0 +1,37 @@
+= Sortieren durch Einfügen
+
+== Grundidee
+[NOTE]
+image::Sortieren_Einf_1.jpg[]
+Schau dir diese bereits sortierte Liste an.
+[WARN]
+====
+. An welche Stelle muss ein Objekt mit dem Eigenschaftwert 5 eingefügt werden, damit die Liste danach immer noch sortiert ist?
+. Wenn nun die Liste leer wäre, wie ordnet man dann das Objekt ein?
+====
+
+== Eine Ausführung
+
+image::Sortieren_Einf.jpg[]
+
+== Das Sortierverfahren
+Wir wollen obige Operation nun in ein Sortierverfahren erweitern.
+[WARN]
+====
+Schreibe eine Methode in Pseudocode, die
+
+. eine Liste und einen Eigenschaftwert erhält und die Position zurückgibt, an der ein Objekt mit diesem Eigenschaftswert in der Liste stehen müsste, damit die Liste weiterhin sortiert ist.
+. eine Liste, ein Objekt und eine Position erhält und das Objekt an der Position in die Liste einfügt
+. eine Liste erhält und eine sortierte Liste zurück gibt
+-- Verwende die zuvor erstellten Methoden
+-- Wie startet das Verfahren?
+====
+
+== Sortieren ohne Hilfsliste
+Im obigen Verfahren wurden Hilfslisten verwendet. Wir wollen nun unser Sortierverfahren so abändern, dass wir ausschließlich auf der zu sortierenden Liste arbeiten.
+
+[WARN]
+====
+. Gibt es Gründe, weswegen es vorteilhaft sein kann nur auf der Eingabeliste zu arbeiten?
+. Schreibe das Sortierverfahren so um, dass es nur noch auf der Eingangsliste arbeitet.
+====

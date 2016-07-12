@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>66</x>
+      <y>33</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:AAchener Schachverband
+--
+Verband: 661
+--
+LV: 6
+--
+Uebergeordnet: 660</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>825</x>
+      <y>33</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Berliner Schachverband
+--
+Verband: 300
+--
+LV: 3
+--
+Uebergeordnet: 000</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>33</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Frankfurt
+--
+Verband: 550
+--
+LV: 5
+--
+Uebergeordnet: 500</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>319</x>
+      <y>33</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Schachbezirk Siegerland
+--
+Verband: 636
+--
+LV: 6
+--
+Uebergeordnet: 630</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>66</x>
+      <y>209</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:AAchener Schachverband
+--
+Verband: 661
+--
+LV: 6
+--
+Uebergeordnet: 660</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>319</x>
+      <y>209</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Berliner Schachverband
+--
+Verband: 300
+--
+LV: 3
+--
+Uebergeordnet: 000</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>209</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Frankfurt
+--
+Verband: 550
+--
+LV: 5
+--
+Uebergeordnet: 500</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>825</x>
+      <y>209</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Schachbezirk Siegerland
+--
+Verband: 636
+--
+LV: 6
+--
+Uebergeordnet: 630</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>55</x>
+      <y>0</y>
+      <w>1023</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>Unsortierte Liste
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>55</x>
+      <y>176</y>
+      <w>1023</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>Liste nach Namen sortiert
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>55</x>
+      <y>352</y>
+      <w>1023</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>Liste nach Verband-Nummer sortiert
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>385</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:AAchener Schachverband
+--
+Verband: 661
+--
+LV: 6
+--
+Uebergeordnet: 660</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>66</x>
+      <y>385</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Berliner Schachverband
+--
+Verband: 300
+--
+LV: 3
+--
+Uebergeordnet: 000</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>319</x>
+      <y>385</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Frankfurt
+--
+Verband: 550
+--
+LV: 5
+--
+Uebergeordnet: 500</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>825</x>
+      <y>385</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Schachbezirk Siegerland
+--
+Verband: 636
+--
+LV: 6
+--
+Uebergeordnet: 630</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>33</x>
+      <y>935</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Aachener Schachverband
+--
+Verband: 661
+--
+LV: 6
+--
+Uebergeordnet: 660
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>935</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Frankfurt
+--
+Verband: 550
+--
+LV: 5
+--
+Uebergeordnet: 500
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>297</x>
+      <y>935</y>
+      <w>33</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>*&lt;*
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>319</x>
+      <y>935</y>
+      <w>55</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=-
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>935</y>
+      <w>55</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=-
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>33</x>
+      <y>1067</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Aachener Schachverband
+--
+Verband: 661
+--
+LV: 6
+--
+Uebergeordnet: 660
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>1100</y>
+      <w>55</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=-
+group=2</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>297</x>
+      <y>1100</y>
+      <w>33</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>*&gt;*
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>1067</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Frankfurt
+--
+Verband: 550
+--
+LV: 5
+--
+Uebergeordnet: 500
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>319</x>
+      <y>1100</y>
+      <w>55</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=-
+group=2</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>33</x>
+      <y>1199</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Mannheim
+--
+Verband: 101
+--
+LV: 1
+--
+Uebergeordnet: 100
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>1287</y>
+      <w>55</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=-
+group=3</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>297</x>
+      <y>1287</y>
+      <w>33</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>*=*
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>1199</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Heidelberg
+--
+Verband: 102
+--
+LV: 1
+--
+Uebergeordnet: 100
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>319</x>
+      <y>1287</y>
+      <w>55</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=-
+group=3</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>187</x>
+      <y>649</y>
+      <w>242</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>--
+Name:Schachbezirk Siegerland
+--
+Verband: 636
+--
+LV: 6
+--
+Uebergeordnet: 630</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

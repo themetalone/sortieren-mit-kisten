@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {ComparableObject} from "./model/ComparableObject";
-import {Dragula, DragulaService} from 'ng2-dragula/ng2-dragula';
+import {ComparableObject} from "./../../model/ComparableObject";
+import {Dragula, DragulaService} from '../../../node_modules/ng2-dragula/ng2-dragula.d';
 
 const RES_PATH = 'app/resources/';
 const DEBUG:boolean = true;
