@@ -1,0 +1,44 @@
+= Entwurf eines Algorithmus
+
+== Vereinfachen des Problems
+
+Wir betrachten wieder die Verbandsliste und wollen diese nach dem Verbandsnamen sortieren.
+
+[NOTE]
+====
+*TODO:* Bild
+
+- UML Klasse eines Objekts
+====
+
+
+[WARN]
+====
+. Überlege dir, welche Informationen des Objektes du tatsächlich brauchst, um eine Liste zu sortieren, und welche nicht. Schreibe das reduzierte Objekt auf.
+. Begründe wieso sich die Objekte nach der Reduktion so darstellen lassen, wenn kein Eigenschaftwert doppelt vorkommt. (*TODO:* UML Objekt der Form (attribut:zahl))
+====
+
+== Das Sortieren
+
+Du sollst im Folgenden eine Liste vereinfachter Objekte sortieren.
+
+[NOTE]
+====
+Hier wird die Web-Application der Waage platziert sein.
+
+- 5 Elemente
+- 10 Elemente
+====
+[WARN]
+====
+. Sortiere die Liste des 1. Problems. Versuche deine Lösungsansätze schriftlich festzuhalten. (5 Minuten)
+. Wähle einen der folgenden Ansätze (am Besten einen, den du bereits in vorhherigen Aufgabe versucht hast)
+-- Sortieren durch Auswählen
+-- Sortieren durch Einfügen
+-- Sortieren durch Vertauschen
+. Wende nun den von dir entworfenen Sortieralgorithmus auf das 2. Problem an.
+====
+
+
+
+
