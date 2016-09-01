@@ -4,12 +4,7 @@
 
 Wir betrachten wieder die Verbandsliste und wollen diese nach dem Verbandsnamen sortieren.
 
-[NOTE]
-====
-*TODO:* Bild
-
-- UML Klasse eines Objekts
-====
+image::./BeispielObjekt.jpg[]
 
 
 [WARN]

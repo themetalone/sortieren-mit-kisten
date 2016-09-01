@@ -30,7 +30,24 @@ export class ScaleWebApplication {
     public scaleLeft:ComparableObject = null;
     public scaleRight:ComparableObject = null;
 
+    public boxLists:ComparableObject[][];
+
     private scalePointer:boolean = true;
+
+    public reveal:boolean = false;
+
+    // Colors
+    public colorList:string[] = [
+        'rgb(255,0,0)',
+        'rgb(255,128,0)',
+        'rgb(255,255,0)',
+        'rgb(128,255,0)',
+        'rgb(0,255,0)',
+        'rgb(0,255,128)',
+        'rgb(0,255,255)',
+        'rgb(0,128,255)',
+        'rgb(0,0,255)',
+        'rgb(128,0,255)'];
 
     constructor(private dragulaService:DragulaService) {
         this.defaultButtonClick();
@@ -113,7 +130,7 @@ export class ScaleWebApplication {
     }
 
     getEntry(id:number):ComparableObject {
-        let o:ComparableObject = {id: -1, property: 0};
+        let o:ComparableObject = {id: -1, property: 0, colorCode:'rgb(0,0,0)'};
         this.boxes.forEach((item:ComparableObject)=> {
             if (item.id == id) {
                 o = item;
@@ -124,7 +141,7 @@ export class ScaleWebApplication {
     }
 
     checkOrder() {
-        if (this.isOrdered(this.boxes)) {
+        if (ScaleWebApplication.isOrdered(this.boxes)) {
             this.checkButton = BUTTON_SUCCESS;
         } else {
             this.checkButton = BUTTON_FAILURE;
@@ -132,7 +149,7 @@ export class ScaleWebApplication {
 
     }
 
-    isOrdered(entries:ComparableObject[]):boolean {
+    static isOrdered(entries:ComparableObject[]):boolean {
         let property:number = 0;
         for (let i:number = 0; i < entries.length; i++) {
             let box_entry = entries[i];
@@ -146,12 +163,16 @@ export class ScaleWebApplication {
 
     defaultButtonClick() {
         this.boxes = [
-            {id: 0, property: 10},
-            {id: 1, property: 9},
-            {id: 2, property: 11},
-            {id: 3, property: 8},
-            {id: 4, property: 7}
+            {id: 0, property: 10, colorCode:this.colorList[0]},
+            {id: 1, property: 9, colorCode:this.colorList[2]},
+            {id: 2, property: 11, colorCode:this.colorList[4]},
+            {id: 3, property: 8, colorCode:this.colorList[6]},
+            {id: 4, property: 7, colorCode:this.colorList[8]}
         ];
+    }
+
+    switchRevelation(){
+        this.reveal = !this.reveal;
     }
 
     newProblemButtonClick() {
@@ -160,28 +181,27 @@ export class ScaleWebApplication {
         switch (selected_case) {
             default:
             case 1:
-                this.boxes = ScaleWebApplication.makeSomeBoxes(5);
+                this.boxes = this.makeSomeBoxes(5);
                 break;
             case 2:
-                this.boxes = ScaleWebApplication.makeSomeBoxes(8);
+                this.boxes = this.makeSomeBoxes(8);
                 break;
             case 3:
                 this.boxes = [
-                    {id: 0, property: 11},
-                    {id: 1, property: 10},
-                    {id: 2, property: 9},
-                    {id: 3, property: 8},
-                    {id: 4, property: 7}
+                    {id: 0, property: 11, colorCode:this.colorList[0]},
+                    {id: 1, property: 10, colorCode:this.colorList[2]},
+                    {id: 2, property: 9, colorCode:this.colorList[4]},
+                    {id: 3, property: 8, colorCode:this.colorList[6]},
+                    {id: 4, property: 7, colorCode:this.colorList[8]}
                 ];
                 break;
         }
-
     }
 
-    static makeSomeBoxes(n:number):ComparableObject[] {
+     makeSomeBoxes(n:number):ComparableObject[] {
         let result:ComparableObject[] = [];
         for (let i:number = 0; i < n; i++) {
-            let co = <ComparableObject>{id: i, property: Math.floor(Math.random() * 100)};
+            let co = <ComparableObject>{id: i, property: Math.floor(Math.random() * 100), colorCode:this.colorList[i]};
             result.push(co);
         }
         return result;
