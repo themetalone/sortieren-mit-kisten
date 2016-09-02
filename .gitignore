@@ -2,3 +2,4 @@ node_modules/
 app/**/*.js
 typings/
 deploy_key.ssh
+out/

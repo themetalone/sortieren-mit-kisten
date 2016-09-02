@@ -3,35 +3,60 @@
     so, dass das leichteste Element oben steht.</p>
 <div>
     <div>
-        <button id='default_problem' (click)='defaultButtonClick()'>Standard-Aufgabe</button>
-        <button id='new_problem' (click)='newProblemButtonClick()'>Neues Problem</button>
+        <button id='default_problem'
+                (click)='defaultButtonClick()'>Standard-Aufgabe
+        </button>
+        <button id='new_problem'
+                (click)='newProblemButtonClick()'>Neues Problem
+        </button>
         <select id='problem_size'>
-            <option value='1' selected>Einfach</option>
+            <option value='1'
+                    selected>Einfach
+            </option>
             <option value='2'>Schwer</option>
             <option value='3'>Worst Case</option>
         </select>
     </div>
     <div class='wrapper'>
-        <div class='container' id='slc'>
-            <div *ngIf='scaleLeft!=null' id='{{scaleLeft.id}}'style.background-color='{{scaleLeft.colorCode}}'>{{scaleLeft.id}}</div>
+        <div class='container'
+             id='slc'>
+            <div *ngIf='scaleLeft!=null'
+                 id='{{scaleLeft.id}}'
+                 style.background-color='{{scaleLeft.colorCode}}'>
+            </div>
         </div>
-        <div><img src={{libraResult}} width='50'/></div>
-        <div class='container' id='src'>
-            <div *ngIf='scaleRight!=null' id='{{scaleRight.id}}'style.background-color='{{scaleRight.colorCode}}'>{{scaleRight.id}}</div>
+        <div><img src={{libraResult}}
+                  width='50'/></div>
+        <div class='container'
+             id='src'>
+            <div *ngIf='scaleRight!=null'
+                 id='{{scaleRight.id}}'
+                 style.background-color='{{scaleRight.colorCode}}'>
+            </div>
         </div>
-    </div><br/>
+    </div>
+    <br/>
     <div class='wrapper'>
         <button (click)="resetScale()">Waage zurücksetzen</button>
         <button (click)="switchRevelation()">{{reveal?'Zudecken':'Aufdecken'}}</button>
         <button (click)='checkOrder()'>{{checkButton}}</button>
+        <button (click)='newList()'>Zusätzliche Liste</button>
     </div>
-    <div class='wrapper'>
-        <div class='container' id='bb' [dragula]='"box-bag"' [dragulaModel]='boxes'>
-            <div (click)='boxClick($event)' *ngFor='let box of boxes' id='{{box.id}}' style.background-color='{{box.colorCode}}'>{{reveal?box.property:'?'}}</div>
+    <div >
+        <div class='wrapper' *ngFor='let boxes of boxLists'>
+            <div class='container'
+                 id='bb'
+                 [dragula]='"box-bag"'
+                 [dragulaModel]='boxes'>
+                <div (click)='boxClick($event)'
+                     *ngFor='let box of boxes'
+                     id='{{box.id}}'
+                     style.background-color='{{box.colorCode}}'>{{reveal?box.property:'?'}}
+                </div>
+            </div>
         </div>
-    </div>
-    <br/>
 
+    </div>
 
     <div *ngIf='DEBUG'>
         <p>debug:</p>

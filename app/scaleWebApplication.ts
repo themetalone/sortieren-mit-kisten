@@ -10,10 +10,10 @@ const BUTTON_FAILURE = 'Das ist nicht ganz richtig';
 
 @Component({
     selector: 'web-scale',
-    templateUrl: './app/scaleWebApplication.html',
-    directives: [Dragula],
     viewProviders: [DragulaService],
-    styleUrls: ['./app/scaleWebApplication.css']
+    templateUrl: './app/scaleWebApplication.html',
+    styleUrls: ['./app/scaleWebApplication.css'],
+    directives: [Dragula]
 })
 export class ScaleWebApplication {
 
@@ -30,7 +30,7 @@ export class ScaleWebApplication {
     public scaleLeft:ComparableObject = null;
     public scaleRight:ComparableObject = null;
 
-    public boxLists:ComparableObject[][];
+    public boxLists:ComparableObject[][] = [[]];
 
     private scalePointer:boolean = true;
 
@@ -51,6 +51,7 @@ export class ScaleWebApplication {
 
     constructor(private dragulaService:DragulaService) {
         this.defaultButtonClick();
+        this.boxLists[0] = this.boxes;
         this.dragulaService.setOptions('box-bag', {
             revertOnSpill: true
         });
@@ -131,12 +132,12 @@ export class ScaleWebApplication {
 
     getEntry(id:number):ComparableObject {
         let o:ComparableObject = {id: -1, property: 0, colorCode:'rgb(0,0,0)'};
-        this.boxes.forEach((item:ComparableObject)=> {
+        this.boxLists.forEach((list:ComparableObject[])=> list.forEach((item:ComparableObject)=> {
             if (item.id == id) {
                 o = item;
                 return;
             }
-        });
+        }));
         return o;
     }
 
@@ -169,6 +170,7 @@ export class ScaleWebApplication {
             {id: 3, property: 8, colorCode:this.colorList[6]},
             {id: 4, property: 7, colorCode:this.colorList[8]}
         ];
+        this.boxLists = [this.boxes];
     }
 
     switchRevelation(){
@@ -184,7 +186,7 @@ export class ScaleWebApplication {
                 this.boxes = this.makeSomeBoxes(5);
                 break;
             case 2:
-                this.boxes = this.makeSomeBoxes(8);
+                this.boxes = this.makeSomeBoxes(10);
                 break;
             case 3:
                 this.boxes = [
@@ -196,15 +198,24 @@ export class ScaleWebApplication {
                 ];
                 break;
         }
+        this.boxLists = [this.boxes];
     }
 
      makeSomeBoxes(n:number):ComparableObject[] {
+         let colorMultiplier:number = 1;
+         if(n <= 5){
+             colorMultiplier = 2;
+         }
         let result:ComparableObject[] = [];
         for (let i:number = 0; i < n; i++) {
-            let co = <ComparableObject>{id: i, property: Math.floor(Math.random() * 100), colorCode:this.colorList[i]};
+            let co = <ComparableObject>{id: i, property: Math.floor(Math.random() * 100), colorCode:this.colorList[colorMultiplier*i]};
             result.push(co);
         }
         return result;
 
+    }
+
+    newList():void{
+        this.boxLists[this.boxLists.length] = new Array<ComparableObject>();
     }
 }
