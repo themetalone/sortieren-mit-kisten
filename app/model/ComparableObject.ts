@@ -10,4 +10,5 @@ export default ComparableObject
 export interface ComparableObject {
     property : number;
     id:number;
+    colorCode:string;
 }

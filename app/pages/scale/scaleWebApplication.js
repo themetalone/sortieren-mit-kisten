@@ -109,14 +109,14 @@ var ScaleWebApplication = (function () {
         return o;
     };
     ScaleWebApplication.prototype.checkOrder = function () {
-        if (this.isOrdered(this.boxes)) {
+        if (ScaleWebApplication.isOrdered(this.boxes)) {
             this.checkButton = BUTTON_SUCCESS;
         }
         else {
             this.checkButton = BUTTON_FAILURE;
         }
     };
-    ScaleWebApplication.prototype.isOrdered = function (entries) {
+    ScaleWebApplication.isOrdered = function (entries) {
         var property = 0;
         for (var i = 0; i < entries.length; i++) {
             var box_entry = entries[i];

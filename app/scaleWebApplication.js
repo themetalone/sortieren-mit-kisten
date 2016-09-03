@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -124,12 +123,16 @@ var ScaleWebApplication = (function () {
         return o;
     };
     ScaleWebApplication.prototype.checkOrder = function () {
-        if (ScaleWebApplication.isOrdered(this.boxes)) {
+        if (ScaleWebApplication.isAnyOrdered(this.boxLists, this.numberOfBoxes)) {
             this.checkButton = BUTTON_SUCCESS;
         }
         else {
             this.checkButton = BUTTON_FAILURE;
         }
+    };
+    ScaleWebApplication.isAnyOrdered = function (entries, numberOfBoxes) {
+        return entries.map(function (list) { return list.length == numberOfBoxes; }).reduce(function (a, b) { return a || b; }, false) &&
+            entries.map(function (boxes) { return ScaleWebApplication.isOrdered(boxes); }).reduce(function (a, b) { return a || b; }, false);
     };
     ScaleWebApplication.isOrdered = function (entries) {
         var property = 0;
@@ -143,6 +146,7 @@ var ScaleWebApplication = (function () {
         return true;
     };
     ScaleWebApplication.prototype.defaultButtonClick = function () {
+        this.numberOfBoxes = 5;
         this.boxes = [
             { id: 0, property: 10, colorCode: this.colorList[0] },
             { id: 1, property: 9, colorCode: this.colorList[2] },
@@ -180,6 +184,7 @@ var ScaleWebApplication = (function () {
     };
     ScaleWebApplication.prototype.makeSomeBoxes = function (n) {
         var colorMultiplier = 1;
+        this.numberOfBoxes = n;
         if (n <= 5) {
             colorMultiplier = 2;
         }
@@ -191,7 +196,7 @@ var ScaleWebApplication = (function () {
         return result;
     };
     ScaleWebApplication.prototype.newList = function () {
-        this.boxLists[this.boxLists.length] = new Array();
+        this.boxLists[this.boxLists.length] = [];
     };
     ScaleWebApplication = __decorate([
         core_1.Component({
@@ -204,6 +209,6 @@ var ScaleWebApplication = (function () {
         __metadata('design:paramtypes', [ng2_dragula_1.DragulaService])
     ], ScaleWebApplication);
     return ScaleWebApplication;
-}());
+})();
 exports.ScaleWebApplication = ScaleWebApplication;
 //# sourceMappingURL=scaleWebApplication.js.map
