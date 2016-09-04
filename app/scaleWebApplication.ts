@@ -36,6 +36,8 @@ export class ScaleWebApplication {
 
     public reveal:boolean = false;
 
+    public numberOfBoxes:number;
+
     // Colors
     public colorList:string[] = [
         'rgb(255,0,0)',
@@ -142,12 +144,17 @@ export class ScaleWebApplication {
     }
 
     checkOrder() {
-        if (ScaleWebApplication.isOrdered(this.boxes)) {
+        if (ScaleWebApplication.isAnyOrdered(this.boxLists,this.numberOfBoxes)) {
             this.checkButton = BUTTON_SUCCESS;
         } else {
             this.checkButton = BUTTON_FAILURE;
         }
 
+    }
+
+    static isAnyOrdered(entries:ComparableObject[][], numberOfBoxes:number):boolean{
+        return entries.map<boolean>((list:ComparableObject[]) => list.length == numberOfBoxes).reduce<boolean>((a,b)=>a || b, false)  &&
+        entries.map<boolean>(boxes => ScaleWebApplication.isOrdered(boxes)).reduce<boolean>((a,b)=>a||b, false);
     }
 
     static isOrdered(entries:ComparableObject[]):boolean {
@@ -163,6 +170,7 @@ export class ScaleWebApplication {
     }
 
     defaultButtonClick() {
+        this.numberOfBoxes = 5;
         this.boxes = [
             {id: 0, property: 10, colorCode:this.colorList[0]},
             {id: 1, property: 9, colorCode:this.colorList[2]},
@@ -203,6 +211,7 @@ export class ScaleWebApplication {
 
      makeSomeBoxes(n:number):ComparableObject[] {
          let colorMultiplier:number = 1;
+         this.numberOfBoxes = n;
          if(n <= 5){
              colorMultiplier = 2;
          }
@@ -216,6 +225,6 @@ export class ScaleWebApplication {
     }
 
     newList():void{
-        this.boxLists[this.boxLists.length] = new Array<ComparableObject>();
+        this.boxLists[this.boxLists.length] = [];
     }
 }
