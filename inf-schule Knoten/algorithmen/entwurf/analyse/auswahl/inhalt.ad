@@ -1,0 +1,42 @@
+= Sortieren durch Auswählen
+
+image::Sortieren_Base.jpg[]
+
+== Grundidee
+Wir werden nun versuchen, die Objekte direkt an endgültige Position in einer sortieren Liste zu setzen. Von einem Objekt wissen wir bereits wo es in einer sortierten Liste stehen muss, nämlich das Objekt mit dem kleinsten Eigenschaftswert.
+
+Wir suchen also erst einmal das Objekt mit dem kleinsten Eigenschaftswert aus der Liste und setzen es in eine eigene Liste.
+
+== Eine Ausführung
+
+image::Sortieren_Ausw.jpg[]
+
+== Wie geht es nun weiter
+Wenn man das Objekt mit dem kleinsten Eigenschaftwert hat, weis man auch wohin das Objekt mit dem zweitkleinsten Eigenschaftwert gehört.
+
+[WARN]
+====
+. Wohin?
+. Was kann man nun tun, um am Ende eine sortierte Liste zu haben?
+====
+
+== Entwurf des Sortierverfahrens
+
+[WARN]
+====
+Schreibe eine Methode in Pseudocode, die
+
+. eine Liste übergeben bekommt und die Position des Objektes mit dem kleinsten Eigenschaftswert zurück gibt.
+. eine Liste und eine Position übergeben bekommt und das Objekt an der Position aus der Liste entfernt und zurück gibt.
+. eine Liste übergeben bekommt und eine sortiere Liste zurück gibt.
+====
+
+== Sortieren ohne Hilfslisten
+Im obigen Verfahren wurden Hilfslisten verwendet. Wir wollen nun unser Sortierverfahren so abändern, dass wir ausschließlich auf der zu sortierenden Liste arbeiten.
+
+[WARN]
+====
+. Gibt es Gründe, weswegen es vorteilhaft sein kann nur auf der Eingabeliste zu arbeiten?
+. Schreibe eine Methode, die zwei Positionen und eine Liste übergeben bekommt und in der Liste die Objekte an Position +x+ mit dem an Position +y+ vertauscht.
+. Schreibe das Sortierverfahren so um, dass es nur noch auf der Eingangsliste arbeitet.
+====

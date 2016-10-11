@@ -1,0 +1,29 @@
+
+
+== Vereinfachen des Problems
+
+Im Folgenden soll ein Sortieralgorithmus entwickelt werden. Um uns auf das Problem des Sortieren zu konzentrieren werden in diesem Kapitel nur _einfache_ Objekte behandelt. Ein solches _einfaches_ oder auch _triviales_ Objekt besteht nur aus einem Eigenschaftswert. Und um es noch einfacher zu machen, sind alle Eigenschaftswerte positive ganze Zahlen.
+
+[WARN]
+====
+. Begründe, wieso es genügt, das Sortierproblem für diese reduzierten Objekte zu lösen.
+====
+
+== Das Sortieren
+
+Du sollst im Folgenden eine Liste vereinfachter Objekte sortieren. Damit später auch der Computer dein Verfahren anwenden kann, beschränken wir uns bei den Vergleichen auf die bekannten Ergebnisse _größer, kleiner, gleich_.
+
+[WARN]
+====
+. Öffne link:https://themetalone.github.io/sortieren-mit-kisten[die Online-Waage] in einem zusätzlichen Fenster und klicke auf _Standardaufgabe_
+. Sortiere die Liste. Versuche deine Lösungsansätze schriftlich festzuhalten. Du kannst auch Hilfslisten dazu verwenden. Ziel ist es, das am Ende eine Listen vollständig und sortiert ist.
+. Um aus deinem Lösungsansatz einen funktionierenden Algorithmus zu machen, soll dieser nun weiterentwickelt werden. Wähle dazu einen der folgenden Ansätze (am Besten einen, den du bereits in der vorherigen Aufgabe versucht hast)
+.. Sortieren durch Auswählen des aktuell größten oder kleinsten Objektes in der Liste
+.. Sortieren durch Einfügen von Objekten in bereits sortierte Listen
+.. Sortieren durch Vertauschen von benachtbarten Objekten
+. Wende nun den von dir entworfenen Sortieralgorithmus auf ein neues Problem an. Wähle dazu in der Online-Waage _Neues Problem_. Wenn du daneben _Schwer_ auswählst, erhälst du eine größere Liste zum Sortieren.
+====
+
+
+
+

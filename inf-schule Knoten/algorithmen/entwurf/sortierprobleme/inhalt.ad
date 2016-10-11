@@ -1,0 +1,23 @@
+== Fachkonzept: Sortierprobleme
+
+Bei den vorherigen Suchaufgaben wurde deutlich, dass Suchen auf sortierten Listen wesentlich schneller ist. Das gilt natürlich nur, wenn die Liste bezüglich der Spalte sortiert wurde, in der man suchen möchte.
+
+Hier wird nun das Sortierproblem allgemeiner beschrieben.
+
+=== Vergleich zwischen Objekten
+
+Wir betrachten eine geordnete (aber nicht zwingenderweise sortierte) Liste von Objekten. Jedes der Objekte hat gewissen Eigenschaften, anhand derer man sie untereinander vergleichen kann. Beispielsweise hat ein _Verband_-Objekt die Eigenschaften _Name_, _Verband_, _LV_ und _Uebergeordnet_.
+
+image::BeispielObjekt.jpg[]
+
+Ein Vergleich zweier Objekte geschiet immer bezüglich einer Eigenschaft und kann 3 Ergebnisse haben, nämlich __größer, kleiner__ oder __gleich__. Das Ergebniss hängt natürlich von der betrachteten Eigenschaft ab.
+
+image::BeispielVergleiche.jpg[]
+
+=== Das Sortierproblem
+
+Ziel ist es, die Liste bezüglich einer Eigenschaft der Objekte aufsteigend oder absteigend zu sortieren.
+
+Im Folgenden werden wir Listen immer aufsteigend sortieren. Das heißt, dass das Objekt, dessen Eigenschaft den kleinsten Wert in der Liste aufweist, an erster Stelle steht und alle nachfolgenden Objekte einen höheren (oder gleichen) Eigenschaftswert haben als alle vorherigen.
+
+image::BeispielListen.jpg[]
