@@ -1,35 +1,61 @@
-<h2>Sortiere die Kisten</h2>
+<h1>Sortiere die Kisten</h1>
 <p>Ziehe die Einträge in der Liste um sie zu sortieren. Klicke auf einen Eintrag um ihn in die Waage zu legen. Sortiere
     so, dass das leichteste Element oben steht.</p>
 <div>
     <div>
-        <button id='default_problem' (click)='defaultButtonClick()'>Standard-Aufgabe</button>
-        <button id='new_problem' (click)='newProblemButtonClick()'>Neues Problem</button>
+        <button id='default_problem'
+                (click)='defaultButtonClick()'>Standard-Aufgabe
+        </button>
+        <button id='new_problem'
+                (click)='newProblemButtonClick()'>Neues Problem
+        </button>
         <select id='problem_size'>
-            <option value='1' selected>Problem 1</option>
-            <option value='2'>Problem 2</option>
-            <option value='4'>Zufälliges Problem</option>
+            <option value='1'
+                    selected>Einfach
+            </option>
+            <option value='2'>Schwer</option>
             <option value='3'>Worst Case</option>
         </select>
     </div>
     <div class='wrapper'>
-        <div class='container' id='bb' [dragula]='"box-bag"' [dragulaModel]='boxes'>
-            <div (click)='boxClick($event)' *ngFor='let box of boxes' id='{{box.id}}'>{{box.id}}</div>
+        <div class='container'
+             id='slc'>
+            <div *ngIf='scaleLeft!=null'
+                 id='{{scaleLeft.id}}'
+                 style.background-color='{{scaleLeft.colorCode}}'>
+            </div>
+        </div>
+        <div><img src={{libraResult}}
+                  width='50'/></div>
+        <div class='container'
+             id='src'>
+            <div *ngIf='scaleRight!=null'
+                 id='{{scaleRight.id}}'
+                 style.background-color='{{scaleRight.colorCode}}'>
+            </div>
         </div>
     </div>
     <br/>
     <div class='wrapper'>
-        <div class='container' id='slc'>
-            <div *ngIf='scaleLeft!=null' id='{{scaleLeft.id}}'>{{scaleLeft.id}}</div>
-        </div>
-        <div><img src={{libraResult}} width='50'/></div>
-        <div class='container' id='src'>
-            <div *ngIf='scaleRight!=null' id='{{scaleRight.id}}'>{{scaleRight.id}}</div>
-        </div>
+        <button (click)="resetScale()">Waage zurücksetzen</button>
+        <button (click)="switchRevelation()">{{reveal?'Zudecken':'Aufdecken'}}</button>
+        <button (click)='checkOrder()'>{{checkButton}}</button>
+        <button (click)='newList()'>Zusätzliche Liste</button>
     </div>
-    <div class='wrapper'>
-        <button class='halfsitebutton' (click)="resetScale()">Waage zurücksetzen</button>
-        <button class='halfsitebutton' (click)='checkOrder()'>{{checkButton}}</button>
+    <div >
+        <div class='wrapper' *ngFor='let boxes of boxLists'>
+            <div class='container'
+                 id='bb'
+                 [dragula]='"box-bag"'
+                 [dragulaModel]='boxes'>
+                <div (click)='boxClick($event)'
+                     *ngFor='let box of boxes'
+                     id='{{box.id}}'
+                     style.background-color='{{box.colorCode}}'>{{reveal?box.property:'?'}}
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <div *ngIf='DEBUG'>

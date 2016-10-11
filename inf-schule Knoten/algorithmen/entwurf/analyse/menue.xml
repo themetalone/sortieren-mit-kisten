@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<menue>
+
+<punkt kurz="auswahl" lang="Sortieren durch Auswählen" autoren="sholzer"></punkt>
+<punkt kurz="einsetzen" lang="Sortieren durch Einsetzen" autoren="sholzer"></punkt>
+<punkt kurz="vertauschen" lang="Sortieren durch Vertauschen" autoren="sholzer"></punkt>
+
+</menue>

@@ -1,0 +1,16 @@
+== Entwurf eines Algorithmus
+
+=== Einleitung
+Herzlichen Glückwunsch! Du wurdest soeben in den deutschen Schachbund befördert. Zu deinen Aufgaben zählt nun die Verwaltung der vielen Unterverbände, Vereine und Mitglieder des Schachbundes.
+
+Als gewissenhafter Verwaltungsbeauftragter möchtest Du dir als erstes einen Überblick über die Listen machen.
+
+
+=== Was Du bereits können solltest
+
+. Codierung von Informationen
+. Grundlegende Steuerstrukturen (Fallunterscheidung und Schleifen)
+. Fachkonzept _Liste_
+
+=== Was lernst Du hier
+In dieser Einheit wird ein Algorithmus entwickelt. Dabei werden die Stufen _Problemanalyse_, _Modellierung_, _Implementierung_ und _Testen_  durchlaufen. Der Fokus liegt jedoch nicht in der Implementierung sondern in der Entwicklung des Algorithmus.

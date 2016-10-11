@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<menue>
+
+<punkt kurz="suchen" lang="Suchen in Listen" autoren="sholzer"></punkt>
+<punkt kurz="sortierprobleme" lang="Fachkonzept Sortierprobleme" autoren="sholzer"></punkt>
+<punkt kurz="analyse" lang="Entwurf eines Sortierverfahrens" autoren="sholzer"></punkt>
+
+</menue>
